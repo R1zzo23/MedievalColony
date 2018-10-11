@@ -16,9 +16,14 @@ $(document).ready(function() {
   elemWheatWorkers = document.getElementById('wheatWorkers');
   elemFishWorkers = document.getElementById('fishWorkers');
   elemWoodWorkers = document.getElementById('woodWorkers');
+  elemMiningLevel = document.getElementById('miningLevel');
+  elemFishingLevel = document.getElementById('fishingLevel');
+  elemFarmingLevel = document.getElementById('farmingLevel');
+  elemLumberLevel = document.getElementById('lumberLevel');
 
   showStats();
   updateWorkerDistribution();
+  updateColonyLevels();
 });
 
 let colony = {
@@ -50,31 +55,31 @@ let colony = {
   },
   skills : {
     mining : {
-      "lvl" : 1,
+      "level" : 1,
       "xp" : 0,
     },
     fishing : {
-      "lvl" : 1,
+      "level" : 1,
       "xp" : 0,
     },
     farming : {
-      "lvl" : 1,
+      "level" : 1,
       "xp" : 0,
     },
     lumber : {
-      "lvl" : 1,
+      "level" : 1,
       "xp" : 0,
     },
     influence : {
-      "lvl" : 1,
+      "level" : 1,
       "xp" : 0,
     },
     negotiating : {
-      "lvl" : 1,
+      "level" : 1,
       "xp" : 0,
     },
     fighting : {
-      "lvl" : 1,
+      "level" : 1,
       "xp" : 0,
     },
   }
@@ -91,7 +96,35 @@ function showStats() {
   elemWood.textContent = stats.wood.amount;
 }
 
-function makeVillagerIdle(x) {
+function updateWorkerDistribution() {
+  elemIdle.textContent = stats.idle;
+  elemGoldWorkers.textContent = stats.gold.workers;
+  elemStoneWorkers.textContent = stats.stone.workers;
+  elemWheatWorkers.textContent = stats.wheat.workers;
+  elemFishWorkers.textContent = stats.fish.workers;
+  elemWoodWorkers.textContent = stats.wood.workers;
+}
+
+function updateColonyLevels() {
+  elemMiningLevel.textContent = skills.mining.level;
+  elemFishingLevel.textContent = skills.fishing.level;
+  elemFarmingLevel.textContent = skills.farming.level;
+  elemLumberLevel.textContent = skills.lumber.level;
+}
+
+function makeWorkerWork(x) {
+  if (stats.idle === 0) {
+    console.log("There are no idle workers to put to work!");
+  }
+  else {
+    console.log("Worker sent to collect " + x + ".");
+    stats.idle--;
+    stats[x].workers++;
+    updateWorkerDistribution();
+  }
+}
+
+function makeWorkerIdle(x) {
   var workersOnThisResource = stats[x].workers;
 
   if (workersOnThisResource === 0){
@@ -103,13 +136,4 @@ function makeVillagerIdle(x) {
     updateWorkerDistribution();
     console.log("Reduce " + x + " workers by 1!");
   }
-}
-
-function updateWorkerDistribution() {
-  elemIdle.textContent = stats.idle;
-  elemGoldWorkers.textContent = stats.gold.workers;
-  elemStoneWorkers.textContent = stats.stone.workers;
-  elemWheatWorkers.textContent = stats.wheat.workers;
-  elemFishWorkers.textContent = stats.fish.workers;
-  elemWoodWorkers.textContent = stats.wood.workers;
 }

@@ -47,45 +47,78 @@
               <td>Idle Workers</td>
               <td colspan="2" id="idle">0</td>
             </tr>
-            <tr>
-              <td>Gold</td>
-              <td id="gold">0</td>
-							<td><button onclick="makeVillagerIdle('gold')">-</button>
-							<td id="goldWorkers">0</td>
-							<td><button>+</button>
-            </tr>
-            <tr>
-              <td>Stone</td>
-              <td id="stone">0</td>
-							<td><button onclick="makeVillagerIdle('stone')">-</button>
-							<td id="stoneWorkers">0</td>
-							<td><button>+</button>
-            </tr>
-            <tr>
-              <td>Wheat</td>
-              <td id="wheat">0</td>
-							<td><button onclick="makeVillagerIdle('wheat')">-</button>
-							<td id="wheatWorkers">0</td>
-							<td><button>+</button>
-            </tr>
-            <tr>
-              <td>Fish</td>
-              <td id="fish">0</td>
-							<td><button onclick="makeVillagerIdle('fish')">-</button>
-							<td id="fishWorkers">0</td>
-							<td><button>+</button>
-            </tr>
-            <tr>
-              <td>Wood</td>
-              <td id="wood">0</td>
-							<td><button onclick="makeVillagerIdle('wood')">-</button>
-							<td id="woodWorkers">0</td>
-							<td><button>+</button>
-            </tr>
           </table>
       </div>
-      <div class="col-md-6">
-
+      <div class="col-md-3">
+				<table class="table table-bordered">
+					<tr>
+						<td>Resource</td>
+						<td>Amount</td>
+						<td colspan="3"># of Workers</td>
+					</tr>
+					<tr>
+						<td>Gold</td>
+						<td id="gold">0</td>
+						<td><button onclick="makeWorkerIdle('gold')">-</button>
+						<td id="goldWorkers">0</td>
+						<td><button onclick="makeWorkerWork('gold')">+</button>
+					</tr>
+					<tr>
+						<td>Stone</td>
+						<td id="stone">0</td>
+						<td><button onclick="makeWorkerIdle('stone')">-</button>
+						<td id="stoneWorkers">0</td>
+						<td><button onclick="makeWorkerWork('stone')">+</button>
+					</tr>
+					<tr>
+						<td>Wheat</td>
+						<td id="wheat">0</td>
+						<td><button onclick="makeWorkerIdle('wheat')">-</button>
+						<td id="wheatWorkers">0</td>
+						<td><button onclick="makeWorkerWork('wheat')">+</button>
+					</tr>
+					<tr>
+						<td>Fish</td>
+						<td id="fish">0</td>
+						<td><button onclick="makeWorkerIdle('fish')">-</button>
+						<td id="fishWorkers">0</td>
+						<td><button onclick="makeWorkerWork('fish')">+</button>
+					</tr>
+					<tr>
+						<td>Wood</td>
+						<td id="wood">0</td>
+						<td><button onclick="makeWorkerIdle('wood')">-</button>
+						<td id="woodWorkers">0</td>
+						<td><button onclick="makeWorkerWork('wood')">+</button>
+					</tr>
+				</table>
+      </div>
+			<div class="col-md-2">
+				<table class="table table-bordered text-center">
+					<tr>
+						<td colspan="2">Colony Skill Levels</td>
+					</tr>
+					<tr>
+						<td>Skill</td>
+						<td>Level</td>
+					</tr>
+					<tr>
+						<td>Mining</td>
+						<td id="miningLevel">0</td>
+					</tr>
+					<tr>
+						<td>Fishing</td>
+						<td id="fishingLevel">0</td>
+					</tr>
+					<tr>
+						<td>Farming</td>
+						<td id="farmingLevel">0</td>
+					</tr>
+					<tr>
+						<td>Lumber</td>
+						<td id="lumberLevel">0</td>
+					</tr>
+				</table>
       </div>
   </div>
 
