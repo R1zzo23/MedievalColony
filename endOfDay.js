@@ -21,3 +21,7 @@ function calculateResourcesCollected(resource, skill) {
   let amountCollected = (stats[resource].workers * 20) * (skills[skill].level * 0.5);
   stats[resource].amount += Math.round(amountCollected);
 }
+
+function addSkillXp(skill) {
+  
+}
