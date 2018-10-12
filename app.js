@@ -29,8 +29,8 @@ $(document).ready(function() {
 colony = {
   stats : {
     "level" : 1,
-    "population" : 3,
-    "idle" : 3,
+    "population" : 6,
+    "idle" : 6,
     "totalXp" : 0,
     gold : {
       "amount" : 0,
@@ -50,7 +50,7 @@ colony = {
     },
     wood : {
       "amount" : 25,
-      "workers" : 2,
+      "workers" : 0,
     },
   },
   skills : {
@@ -95,8 +95,6 @@ function showStats() {
   elemFish.textContent = stats.fish.amount;
   elemWood.textContent = stats.wood.amount;
 }
-
-
 
 function updateColonyLevels() {
   elemMiningLevel.textContent = skills.mining.level;
