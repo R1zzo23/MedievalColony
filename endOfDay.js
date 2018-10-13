@@ -30,4 +30,13 @@ function addSkillXp(collected, skill) {
   console.log(skill + ' total XP now: ' + skills[skill].xp);
   stats.totalXp += xpAdded;
   console.log('Total Colony XP Now: ' + stats.totalXp);
+  checkForSkillLevelUp(skill);
+}
+
+function checkForSkillLevelUp (skill) {
+  console.log("XP Needed to Level Up: " + ((skills[skill].level * 250) + (500 * (3 + (skills[skill].level / 10)))));
+  if (skills[skill].xp >= ((skills[skill].level * 250) + (500 * (3 + (skills[skill].level / 10))))) {
+    skills[skill].level++;
+    updateColonyLevels();
+  }
 }

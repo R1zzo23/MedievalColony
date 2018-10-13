@@ -20,6 +20,7 @@ $(document).ready(function() {
   elemFishingLevel = document.getElementById('fishingLevel');
   elemFarmingLevel = document.getElementById('farmingLevel');
   elemLumberLevel = document.getElementById('lumberLevel');
+  elemInfo = document.getElementById('info');
 
   showStats();
   updateWorkerDistribution();
