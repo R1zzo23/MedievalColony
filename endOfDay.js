@@ -1,4 +1,5 @@
 function endDay() {
+  info.innerHTML = "";
   if (stats.gold.workers > 0) {
     addSkillXp(calculateResourcesCollected("gold", "mining"), "mining");
   }
@@ -20,6 +21,7 @@ function endDay() {
 function calculateResourcesCollected(resource, skill) {
   let amountCollected = Math.round((stats[resource].workers * 20) * (skills[skill].level * 0.5));
   stats[resource].amount += amountCollected;
+  info.innerHTML += "Collected " + amountCollected + " units of " + resource + ".<br />";
   return amountCollected;
 }
 
@@ -34,9 +36,10 @@ function addSkillXp(collected, skill) {
 }
 
 function checkForSkillLevelUp (skill) {
-  console.log("XP Needed to Level Up: " + ((skills[skill].level * 250) + (500 * (3 + (skills[skill].level / 10)))));
-  if (skills[skill].xp >= ((skills[skill].level * 250) + (500 * (3 + (skills[skill].level / 10))))) {
+  console.log("XP Needed to Level Up: " + ((skills[skill].level * 250) + (250 * (3 + (skills[skill].level / 10)))));
+  if (skills[skill].xp >= ((skills[skill].level * 250) + (250 * (3 + (skills[skill].level / 10))))) {
     skills[skill].level++;
+    info.innerHTML += "The colony has grown stronger in " + skill +"!<br />";
     updateColonyLevels();
   }
 }
