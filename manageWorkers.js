@@ -1,5 +1,5 @@
 function updateWorkerDistribution() {
-  elemIdle.textContent = stats.idle;
+  elemIdle.textContent = stats.population.idle;
   elemGoldWorkers.textContent = stats.gold.workers;
   elemStoneWorkers.textContent = stats.stone.workers;
   elemWheatWorkers.textContent = stats.wheat.workers;
@@ -8,12 +8,12 @@ function updateWorkerDistribution() {
 }
 
 function makeWorkerWork(x) {
-  if (stats.idle === 0) {
+  if (stats.population.idle === 0) {
     console.log("There are no idle workers to put to work!");
   }
   else {
     console.log("Worker sent to collect " + x + ".");
-    stats.idle--;
+    stats.population.idle--;
     stats[x].workers++;
     updateWorkerDistribution();
   }
@@ -27,7 +27,7 @@ function makeWorkerIdle(x) {
   }
   else {
     stats[x].workers--;
-    stats.idle++;
+    stats.population.idle++;
     updateWorkerDistribution();
     console.log("Reduce " + x + " workers by 1!");
   }

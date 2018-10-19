@@ -15,6 +15,7 @@ function endDay() {
   if (stats.wood.workers > 0) {
     addSkillXp(calculateResourcesCollected("wood", "lumber"), "lumber");
   }
+  consumeFoodForPopulation();
   showStats();
 }
 
@@ -42,4 +43,13 @@ function checkForSkillLevelUp (skill) {
     info.innerHTML += "The colony has grown stronger in " + skill +"!<br />";
     updateColonyLevels();
   }
+}
+
+function consumeFoodForPopulation () {
+  consumedFish = stats.population.warriors * 3;
+  stats.fish.amount -= consumedFish;
+  consumedWheat = stats.population.workers * 2;
+  stats.wheat.amount -= consumedWheat;
+  info.innerHTML += "Colony consumed " + consumedFish + " units of fish for the warriors.<br />";
+  info.innerHTML += "Colony consumed " + consumedWheat + " units of wheat for the workers.<br />";
 }

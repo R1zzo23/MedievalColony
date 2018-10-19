@@ -5,6 +5,7 @@ $(document).ready(function() {
   elemLevel = document.getElementById("level");
   elemTotalXp = document.getElementById('totalXp');
   elemPopulation = document.getElementById('population');
+  elemWarriors = document.getElementById('warriors');
   elemIdle = document.getElementById('idle');
   elemGold = document.getElementById('gold');
   elemStone = document.getElementById('stone');
@@ -30,9 +31,13 @@ $(document).ready(function() {
 colony = {
   stats : {
     "level" : 1,
-    "population" : 6,
-    "idle" : 6,
     "totalXp" : 0,
+    population : {
+      "total" : 6,
+      "warriors" : 2,
+      "workers" : 4,
+      "idle" : 4,
+    },
     gold : {
       "amount" : 0,
       "workers" : 0,
@@ -89,7 +94,8 @@ colony = {
 function showStats() {
   elemLevel.textContent = stats.level;
   elemTotalXp.textContent = stats.totalXp;
-  elemPopulation.textContent = stats.population;
+  elemPopulation.textContent = stats.population.total;
+  elemWarriors.textContent = stats.population.warriors;
   elemGold.textContent = stats.gold.amount;
   elemStone.textContent = stats.stone.amount;
   elemWheat.textContent = stats.wheat.amount;
