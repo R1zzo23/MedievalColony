@@ -23,12 +23,15 @@ $(document).ready(function() {
   elemLumberLevel = document.getElementById('lumberLevel');
   elemInfo = document.getElementById('info');
 
+  colonyCreation();
+
   showStats();
   updateWorkerDistribution();
   updateColonyLevels();
 });
 
 colony = {
+  "name " : "Stratham",
   stats : {
     "level" : 1,
     "totalXp" : 0,
