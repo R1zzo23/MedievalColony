@@ -56,6 +56,7 @@ colony = {
     fish : {
       "amount" : 0,
       "workers" : 0,
+      "daysWithout" : 0,
     },
     wood : {
       "amount" : 25,

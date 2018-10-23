@@ -47,9 +47,30 @@ function checkForSkillLevelUp (skill) {
 
 function consumeFoodForPopulation () {
   consumedFish = stats.population.warriors * 3;
-  stats.fish.amount -= consumedFish;
+
+  if (consumedFish > stats.fish.amount) {
+    stats.fish.daysWithout++;
+    var warriorWheat = Math.floor((consumedFish - stats.fish.amount) * 1.5);
+    consumedFish = stats.fish.amount;
+    stats.fish.amount = 0;
+    if (stats.fish.daysWithout == 1)
+      alert("Your colony has no more fish! Warriors need protein to stay strong.");
+    else if (stats.fish.daysWithout == 2)
+      alert(colony.name + " is still without fish. To keep the warriors happy it needs to be replenished.");
+    else if (stats.fish.daysWithout >= 3)
+      alert(colony.name + "'s fish collection has been depleted for days! The warriors of " + colony.name + " are angry.");
+    stats.wheat.amount -= warriorWheat;
+  }
+  else {
+    stats.fish.amount -= consumedFish;
+    stats.fish.daysWithout = 0;
+  }
+
   consumedWheat = stats.population.workers * 2;
   stats.wheat.amount -= consumedWheat;
-  info.innerHTML += "Colony consumed " + consumedFish + " units of fish for the warriors.<br />";
-  info.innerHTML += "Colony consumed " + consumedWheat + " units of wheat for the workers.<br />";
+
+  totalWheat = consumedWheat + warriorWheat;
+
+  info.innerHTML += "Colony consumed " + consumedFish + " units of fish.<br />";
+  info.innerHTML += "Colony consumed " + totalWheat + " units of wheat.<br />";
 }
