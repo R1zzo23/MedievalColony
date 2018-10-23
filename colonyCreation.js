@@ -1,6 +1,5 @@
 function colonyCreation() {
   chooseColonyName();
-  chooseColonySpecialty();
 }
 
 function chooseColonyName() {
@@ -17,8 +16,4 @@ function chooseColonyName() {
     {
         nameArray[i].innerHTML = colony.name;
     }
-}
-
-function chooseColonySpecialty() {
-   $('#myPopup').show();
 }
