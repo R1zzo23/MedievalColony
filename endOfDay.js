@@ -74,3 +74,11 @@ function consumeFoodForPopulation () {
   info.innerHTML += "Colony consumed " + consumedFish + " units of fish.<br />";
   info.innerHTML += "Colony consumed " + totalWheat + " units of wheat.<br />";
 }
+
+function warriorsEatFirst() {
+
+}
+
+function workersEatLast() {
+
+}
