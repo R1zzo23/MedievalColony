@@ -46,39 +46,81 @@ function checkForSkillLevelUp (skill) {
 }
 
 function consumeFoodForPopulation () {
+  warriorFish = 0;
+  warriorWheat = 0;
+  workerWheat = 0;
+  if (stats.population.warriors > 0)
+    warriorFood = warriorsEatFirst();
+    warriorFish = warriorFood[0];
+    warriorWheat = warriorFood[1];
+  if (stats.population.workers > 0)
+    workerWheat = workersEatLast();
+  wheatConsumed = warriorWheat + workerWheat;
 
-
-  consumedWheat = stats.population.workers * 2;
-  stats.wheat.amount -= consumedWheat;
-
-  totalWheat = consumedWheat + warriorWheat;
-
-  info.innerHTML += "Colony consumed " + consumedFish + " units of fish.<br />";
-  info.innerHTML += "Colony consumed " + totalWheat + " units of wheat.<br />";
+  if (warriorFish > 0) {
+    info.innerHTML += "Colony consumed " + fishConsumed + " units of fish and " + wheatConsumed + " units of wheat.<br />";
+  }
+  else {
+    info.innerHTML += "Colony consumed " + wheatConsumed + " units of wheat.<br />";
+  }
 }
 
 function warriorsEatFirst() {
   consumedFish = stats.population.warriors * 3;
+  warriorWheat = 0;
+  colonyFish = stats.fish.amount;
 
-  if (consumedFish > stats.fish.amount) {
+  if (consumedFish > colonyFish) {
     stats.fish.daysWithout++;
-    var warriorWheat = Math.floor((consumedFish - stats.fish.amount) * 1.5);
-    consumedFish = stats.fish.amount;
+    warriorWheat = Math.floor((consumedFish - colonyFish) * 1.5);
+    consumedFish = colonyFish;
     stats.fish.amount = 0;
-    if (stats.fish.daysWithout == 1)
-      alert("Your colony has no more fish! Warriors need protein to stay strong.");
-    else if (stats.fish.daysWithout == 2)
-      alert(colony.name + " is still without fish. To keep the warriors happy it needs to be replenished.");
-    else if (stats.fish.daysWithout >= 3)
-      alert(colony.name + "'s fish collection has been depleted for days! The warriors of " + colony.name + " are angry.");
+    warriorHappiness();
     stats.wheat.amount -= warriorWheat;
   }
   else {
     stats.fish.amount -= consumedFish;
     stats.fish.daysWithout = 0;
   }
+  return [consumedFish, warriorWheat];
+}
+
+function warriorHappiness() {
+  if (stats.fish.daysWithout > 0){
+    if (stats.fish.daysWithout == 1)
+      alert("Your colony has no more fish! Warriors need protein to stay strong.");
+    else if (stats.fish.daysWithout == 2)
+      alert(colony.name + " is still without fish. To keep the warriors happy it needs to be replenished.");
+    else if (stats.fish.daysWithout >= 3)
+      alert(colony.name + "'s fish collection has been depleted for days! The warriors of " + colony.name + " are angry.");
+
+    warriorTurnedMercenary(stats.fish.daysWithout);
+  }
 }
 
 function workersEatLast() {
+  consumedWheat = stats.population.workers * 2;
+  colonyWheat = stats.wheat.amount;
 
+  if (consumedWheat > colonyWheat) {
+    stats.wheat.daysWithout++;
+    consumedWheat = colonyWheat;
+    stats.wheat.amount = 0;
+    workerHappiness();
+  }
+  else {
+    stats.wheat.amount -= consumedWheat;
+    stats.wheat.daysWithout = 0;
+  }
+
+  return consumedWheat;
+}
+
+function workerHappiness() {
+  if (stats.wheat.daysWithout == 1)
+    alert("Your colony has no more wheat! The people of " + colony.name + " are famished.");
+  else if (stats.wheat.daysWithout == 2)
+    alert("The people of " + colony.name + " are going hungry and their health is failing.");
+  else if (stats.wheat.daysWithout >= 3)
+    alert(colony.name + " is in unrest and upheaval due to the lack of food!");
 }

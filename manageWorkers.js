@@ -1,4 +1,5 @@
 function updateWorkerDistribution() {
+  elemWarriors.textContent = stats.population.warriors;
   elemIdle.textContent = stats.population.idle;
   elemGoldWorkers.textContent = stats.gold.workers;
   elemStoneWorkers.textContent = stats.stone.workers;

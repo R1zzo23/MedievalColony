@@ -52,6 +52,7 @@ colony = {
     wheat : {
       "amount" : 25,
       "workers" : 0,
+      "daysWithout" : 0,
     },
     fish : {
       "amount" : 0,
