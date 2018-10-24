@@ -58,7 +58,7 @@ function consumeFoodForPopulation () {
   wheatConsumed = warriorWheat + workerWheat;
 
   if (warriorFish > 0) {
-    info.innerHTML += "Colony consumed " + fishConsumed + " units of fish and " + wheatConsumed + " units of wheat.<br />";
+    info.innerHTML += "Colony consumed " + warriorFish + " units of fish and " + wheatConsumed + " units of wheat.<br />";
   }
   else {
     info.innerHTML += "Colony consumed " + wheatConsumed + " units of wheat.<br />";

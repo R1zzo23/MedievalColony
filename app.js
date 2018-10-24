@@ -31,7 +31,11 @@ $(document).ready(function() {
 });
 
 colony = {
-  "name " : "Stratham",
+  "name" : "Colony",
+  location : {
+    "quadrant" : 0,
+    "description" : "",
+  },
   stats : {
     "level" : 1,
     "totalXp" : 0,
