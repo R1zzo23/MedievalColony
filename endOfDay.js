@@ -46,6 +46,18 @@ function checkForSkillLevelUp (skill) {
 }
 
 function consumeFoodForPopulation () {
+
+
+  consumedWheat = stats.population.workers * 2;
+  stats.wheat.amount -= consumedWheat;
+
+  totalWheat = consumedWheat + warriorWheat;
+
+  info.innerHTML += "Colony consumed " + consumedFish + " units of fish.<br />";
+  info.innerHTML += "Colony consumed " + totalWheat + " units of wheat.<br />";
+}
+
+function warriorsEatFirst() {
   consumedFish = stats.population.warriors * 3;
 
   if (consumedFish > stats.fish.amount) {
@@ -65,18 +77,6 @@ function consumeFoodForPopulation () {
     stats.fish.amount -= consumedFish;
     stats.fish.daysWithout = 0;
   }
-
-  consumedWheat = stats.population.workers * 2;
-  stats.wheat.amount -= consumedWheat;
-
-  totalWheat = consumedWheat + warriorWheat;
-
-  info.innerHTML += "Colony consumed " + consumedFish + " units of fish.<br />";
-  info.innerHTML += "Colony consumed " + totalWheat + " units of wheat.<br />";
-}
-
-function warriorsEatFirst() {
-
 }
 
 function workersEatLast() {
