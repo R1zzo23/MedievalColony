@@ -1,35 +1,41 @@
 world = {
   "name" : "Europe",
   locations : {
-    "quadrant" : 0,
-    "description" : "",
-  },
-  resources : {
-    gold : {
-      "amount" : 0,
-      "workers" : 0,
+    north : {
+      resources : {
+        "gold" : 250,
+        "stone" : 500,
+        "diamond" : 75,
+        "wheat" : 2500,
+        "wood" : 2500,
+      },
     },
-    stone : {
-      "amount" : 0,
-      "workers" : 0,
+    south : {
+      resources : {
+        "gold" : 250,
+        "stone" : 500,
+        "diamond" : 75,
+        "wheat" : 2500,
+        "wood" : 2500,
+      },
     },
-    diamond : {
-      "amount" : 0,
-      "workers" : 0,
+    east : {
+      resources : {
+        "gold" : 250,
+        "stone" : 500,
+        "diamond" : 75,
+        "wheat" : 2500,
+        "wood" : 2500,
+      },
     },
-    wheat : {
-      "amount" : 25,
-      "workers" : 0,
-      "daysWithout" : 0,
-    },
-    fish : {
-      "amount" : 0,
-      "workers" : 0,
-      "daysWithout" : 0,
-    },
-    wood : {
-      "amount" : 25,
-      "workers" : 0,
+    west : {
+      resources : {
+        "gold" : 250,
+        "stone" : 500,
+        "diamond" : 75,
+        "wheat" : 2500,
+        "wood" : 2500,
+      },
     },
   },
 };
