@@ -23,11 +23,35 @@ $(document).ready(function() {
   elemLumberLevel = document.getElementById('lumberLevel');
   elemInfo = document.getElementById('info');
 
+  elemNorthGold = document.getElementById('northGold');
+  elemSouthGold = document.getElementById('southGold');
+  elemEastGold = document.getElementById('eastGold');
+  elemWestGold = document.getElementById('westGold');
+  elemNorthStone = document.getElementById('northStone');
+  elemSouthStone = document.getElementById('southStone');
+  elemEastStone = document.getElementById('eastStone');
+  elemWestStone = document.getElementById('westStone');
+  elemNorthDiamond = document.getElementById('northDiamond');
+  elemSouthDiamond = document.getElementById('southDiamond');
+  elemEastDiamond = document.getElementById('eastDiamond');
+  elemWestDiamond = document.getElementById('westDiamond');
+  elemNorthWheat = document.getElementById('northWheat');
+  elemSouthWheat = document.getElementById('southWheat');
+  elemEastWheat = document.getElementById('eastWheat');
+  elemWestWheat = document.getElementById('westWheat');
+  elemNorthWood = document.getElementById('northWood');
+  elemSouthWood = document.getElementById('southWood');
+  elemEastWood = document.getElementById('eastWood');
+  elemWestWood = document.getElementById('westWood');
+
   colonyCreation();
 
   showStats();
   updateWorkerDistribution();
   updateColonyLevels();
+  updateWorldResourceTable();
+
+  document.getElementById('worldName').innerHTML = world.name;
 });
 
 colony = {

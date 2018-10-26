@@ -15,6 +15,7 @@
 	<script type="text/javascript" src="endOfDay.js"></script>
 	<script type="text/javascript" src="colonyCreation.js"></script>
 	<script type="text/javascript" src="randomPopulationEvents.js"></script>
+	<script type="text/javascript" src="worldCreation.js"></script>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!-- Optional theme -->
@@ -133,6 +134,54 @@
           <p id="info"></p>
       </div>
   </div>
+	<div class='row'>
+		<div class="col-md-2">
+			<table class="table table-bordered">
+				<tr>
+					<td id='worldName'></td>
+					<td>North</td>
+					<td>South</td>
+					<td>East</td>
+					<td>West</td>
+				</tr>
+				<tr>
+					<td>Gold</td>
+					<td id='northGold'></td>
+					<td id='southGold'></td>
+					<td id='eastGold'></td>
+					<td id='westGold'></td>
+				</tr>
+				<tr>
+					<td>Stone</td>
+					<td id='northStone'></td>
+					<td id='southStone'></td>
+					<td id='eastStone'></td>
+					<td id='westStone'></td>
+				</tr>
+				<tr>
+					<td>Diamond</td>
+					<td id='northDiamond'></td>
+					<td id='southDiamond'></td>
+					<td id='eastDiamond'></td>
+					<td id='westDiamond'></td>
+				</tr>
+				<tr>
+					<td>Wheat</td>
+					<td id='northWheat'></td>
+					<td id='southWheat'></td>
+					<td id='eastWheat'></td>
+					<td id='westWheat'></td>
+				</tr>
+				<tr>
+					<td>Wood</td>
+					<td id='northWood'></td>
+					<td id='southWood'></td>
+					<td id='eastWood'></td>
+					<td id='westWood'></td>
+				</tr>
+			</table>
+		</div>
+	</div>
 <button onclick="saveData()">Save</button>
 <button onclick="loadData()">Load</button>
 <button onclick="endDay()">End Day</button>
