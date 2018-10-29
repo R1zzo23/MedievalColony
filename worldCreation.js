@@ -1,11 +1,12 @@
 world = {
-  "name" : "Europe",
+  "name" : "World",
   locations : {
     north : {
       resources : {
         "gold" : 250,
         "stone" : 500,
         "diamond" : 75,
+        "fish" : 1500,
         "wheat" : 2500,
         "wood" : 2500,
       },
@@ -15,6 +16,7 @@ world = {
         "gold" : 250,
         "stone" : 500,
         "diamond" : 75,
+        "fish" : 1500,
         "wheat" : 2500,
         "wood" : 2500,
       },
@@ -24,6 +26,7 @@ world = {
         "gold" : 250,
         "stone" : 500,
         "diamond" : 75,
+        "fish" : 1500,
         "wheat" : 2500,
         "wood" : 2500,
       },
@@ -33,6 +36,7 @@ world = {
         "gold" : 250,
         "stone" : 500,
         "diamond" : 75,
+        "fish" : 1500,
         "wheat" : 2500,
         "wood" : 2500,
       },
@@ -53,6 +57,10 @@ function updateWorldResourceTable() {
   elemSouthDiamond.innerHTML = world.locations.south.resources.diamond;
   elemEastDiamond.innerHTML = world.locations.east.resources.diamond;
   elemWestDiamond.innerHTML = world.locations.west.resources.diamond;
+  elemNorthFish.innerHTML = world.locations.north.resources.fish;
+  elemSouthFish.innerHTML = world.locations.south.resources.fish;
+  elemEastFish.innerHTML = world.locations.east.resources.fish;
+  elemWestFish.innerHTML = world.locations.west.resources.fish;
   elemNorthWheat.innerHTML = world.locations.north.resources.wheat;
   elemSouthWheat.innerHTML = world.locations.south.resources.wheat;
   elemEastWheat.innerHTML = world.locations.east.resources.wheat;

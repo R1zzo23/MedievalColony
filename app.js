@@ -35,6 +35,10 @@ $(document).ready(function() {
   elemSouthDiamond = document.getElementById('southDiamond');
   elemEastDiamond = document.getElementById('eastDiamond');
   elemWestDiamond = document.getElementById('westDiamond');
+  elemNorthFish = document.getElementById('northFish');
+  elemSouthFish = document.getElementById('southFish');
+  elemEastFish = document.getElementById('eastFish');
+  elemWestFish = document.getElementById('westFish');
   elemNorthWheat = document.getElementById('northWheat');
   elemSouthWheat = document.getElementById('southWheat');
   elemEastWheat = document.getElementById('eastWheat');

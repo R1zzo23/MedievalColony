@@ -17,12 +17,15 @@ function endDay() {
   }
   consumeFoodForPopulation();
   showStats();
+  updateWorldResourceTable();
 }
 
 function calculateResourcesCollected(resource, skill) {
   let amountCollected = Math.round((stats[resource].workers * 20) * (skills[skill].level * 0.5));
   stats[resource].amount += amountCollected;
   info.innerHTML += "Collected " + amountCollected + " units of " + resource + ".<br />";
+  world.locations[colony.location.description.toLowerCase()].resources[resource] -= amountCollected;
+  console.log(world.locations[colony.location.description.toLowerCase()].resources[resource]);
   return amountCollected;
 }
 
