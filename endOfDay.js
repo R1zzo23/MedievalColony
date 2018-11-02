@@ -1,5 +1,13 @@
 function endDay() {
   info.innerHTML = "";
+  checkWhereWorkersAre();
+  checkForColonyLevelUp();
+  consumeFoodForPopulation();
+  showStats();
+  updateWorldResourceTable();
+}
+
+function checkWhereWorkersAre() {
   if (stats.gold.workers > 0) {
     addSkillXp(calculateResourcesCollected("gold", "mining"), "mining");
   }
@@ -15,9 +23,6 @@ function endDay() {
   if (stats.wood.workers > 0) {
     addSkillXp(calculateResourcesCollected("wood", "lumber"), "lumber");
   }
-  consumeFoodForPopulation();
-  showStats();
-  updateWorldResourceTable();
 }
 
 function calculateResourcesCollected(resource, skill) {
@@ -45,6 +50,14 @@ function checkForSkillLevelUp (skill) {
     skills[skill].level++;
     info.innerHTML += "The colony has grown stronger in " + skill +"!<br />";
     updateColonyLevels();
+  }
+}
+
+function checkForColonyLevelUp() {
+  if (colony.stats.totalXp >= (colony.stats.level * 500)){
+    info.innerHTML += "The colony level has increased! You've improved your status in the world.<br />";
+    colony.stats.level++;
+    showStats();
   }
 }
 
@@ -126,4 +139,6 @@ function workerHappiness() {
     alert("The people of " + colony.name + " are going hungry and their health is failing.");
   else if (stats.wheat.daysWithout >= 3)
     alert(colony.name + " is in unrest and upheaval due to the lack of food!");
+
+    workerDiesToStarvation(stats.wheat.daysWithout);
 }
