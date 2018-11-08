@@ -10,7 +10,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- Javascript file -->
   <script type="text/javascript" src="gameAssetCreation.js"></script>
-  <script type="text/javascript" src="diceRoll.js"></script>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!-- Optional theme -->
@@ -48,7 +47,7 @@
     <div class="col-md-6">
       <div class="row">
         <div class="col-md-2">
-          <button class="deck" id="resourceCards">R</button>
+          <button class="deck" onclick='drawResourceCard()' id="resourceCards">R - <span id=numberOfResourceCards>0</span></button>
         </div>
         <div class="col-md-2">
           <button class="deck" id="citizenCards">C</button>
@@ -59,4 +58,5 @@
       </div>
     </div>
   </div>
+	<p id='gameInfo'></p>
 </body>
