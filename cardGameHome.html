@@ -10,6 +10,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- Javascript file -->
   <script type="text/javascript" src="gameAssetCreation.js"></script>
+	<script type="text/javascript" src="playerHand.js"></script>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!-- Optional theme -->
@@ -47,13 +48,16 @@
     <div class="col-md-6">
       <div class="row">
         <div class="col-md-2">
-          <button class="deck" onclick='drawResourceCard()' id="resourceCards">R - <span id=numberOfResourceCards>0</span></button>
+					<span class="text-center cardCount" id='numberOfResourceCards'>0</span>
+          <button class="deck" onclick='drawCard(resourceCard)' id="resourceCards">R</button>
         </div>
         <div class="col-md-2">
-          <button class="deck" id="citizenCards">C</button>
+					<span class="text-center cardCount" id='numberOfCitizensCards'>0</span>
+          <button class="deck" onclick='drawCard(citizenCard)' id="citizenCards">C</button>
         </div>
         <div class="col-md-2">
-          <button class="deck" id="eventCards">E</button>
+					<span class="text-center cardCount" id='numberOfEventCards'>0</span>
+          <button class="deck" onclick='drawCard(eventCard)' id="eventCards">E</button>
         </div>
       </div>
     </div>
