@@ -90,24 +90,10 @@ function createEventCards() {
   elemNumberOfEventCards.innerHTML = eventCards.length;
 }
 
-function drawCard(x) {
-  elementName = "numberOf" + x.charAt(0).toUpperCase() + x.slice(1);
-  arrayName = x + "s";
-  element = document.getElementById('elementName');
-  if (arrayName.length > 0) {
-    randomCardIndex = Math.floor(Math.random() * x.length);
-    elemGameInfo.innerHTML = "You drew a " + arrayName[randomCardIndex] + " card.<br />";
-    playerHand[arrayName[randomCardIndex]]++;
-    arrayName.splice(randomCardIndex, 1);
-    element.innerHTML = arrayName.length;
-    displayPlayerHand(playerHand);
-  }
-}
-
 function drawResourceCard() {
   if (resourceCards.length > 0) {
     randomCardIndex = Math.floor(Math.random() * resourceCards.length);
-    elemGameInfo.innerHTML = "You drew a " + resourceCards[randomCardIndex] + " card.<br />";
+    elemGameInfo.innerHTML = "Card drawn: " + resourceCards[randomCardIndex] + "<br />";
     playerHand[resourceCards[randomCardIndex]]++;
     resourceCards.splice(randomCardIndex, 1);
     elemNumberOfResourceCards.innerHTML = resourceCards.length;
@@ -115,8 +101,24 @@ function drawResourceCard() {
   }
 }
 
-function drawCiizenCard() {
-  if (eventCards.length > 0) {
+function drawCitizenCard() {
+  if (citizenCards.length > 0) {
+    randomCardIndex = Math.floor(Math.random() * citizenCards.length);
+    elemGameInfo.innerHTML = "Card drawn: " + citizenCards[randomCardIndex] + "<br />";
+    playerHand[citizenCards[randomCardIndex]]++;
+    citizenCards.splice(randomCardIndex, 1);
+    elemNumberOfCitizenCards.innerHTML = citizenCards.length;
+    displayPlayerHand(playerHand);
+  }
+}
 
+function drawEventCard() {
+  if (eventCards.length > 0) {
+    randomCardIndex = Math.floor(Math.random() * eventCards.length);
+    elemGameInfo.innerHTML = "Card drawn: " + eventCards[randomCardIndex] + "<br />";
+    eventCardAction(eventCards[randomCardIndex]);
+    eventCards.splice(randomCardIndex, 1);
+    elemNumberOfEventCards.innerHTML = eventCards.length;
+    displayPlayerHand(playerHand);
   }
 }

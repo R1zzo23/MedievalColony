@@ -4,7 +4,8 @@ function displayPlayerHand(hand) {
   elemGameInfo.innerHTML += "Stone: " + hand.stone + "<br />";
   elemGameInfo.innerHTML += "Fish: " + hand.fish + "<br />";
   elemGameInfo.innerHTML += "Gold: " + hand.gold + "<br />";
-  elemGameInfo.innerHTML += "Worker: " + hand.diamond + "<br />";
+  elemGameInfo.innerHTML += "Diamond: " + hand.diamond + "<br />";
+  elemGameInfo.innerHTML += "Worker: " + hand.worker + "<br />";
   elemGameInfo.innerHTML += "Explorer: " + hand.explorer + "<br />";
   elemGameInfo.innerHTML += "Warrior: " + hand.warrior + "<br />";
   elemGameInfo.innerHTML += "Archer: " + hand.archer + "<br />";
