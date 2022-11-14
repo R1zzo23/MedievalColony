@@ -9,6 +9,7 @@
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- Javascript file -->
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script type="text/javascript" src="app.js"></script>
 	<script type="text/javascript" src="manageWorkers.js"></script>
 	<script type="text/javascript" src="saveLoadData.js"></script>
@@ -16,6 +17,7 @@
 	<script type="text/javascript" src="colonyCreation.js"></script>
 	<script type="text/javascript" src="randomPopulationEvents.js"></script>
 	<script type="text/javascript" src="worldCreation.js"></script>
+	<script src="hexgridwidget.js"></script>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!-- Optional theme -->
@@ -189,9 +191,28 @@
 			</table>
 		</div>
 	</div>
-<button onclick="saveData()">Save</button>
-<button onclick="loadData()">Load</button>
-<button onclick="endDay()">End Day</button>
+	<button onclick="saveData()">Save</button>
+	<button onclick="loadData()">Load</button>
+	<button onclick="endDay()">End Day</button>
+	<div class="container">
+
+	</div>
+	<script>
+		<!-- main initialisation -->
+		var rebuild = function () {
+		  var
+		    //radius = parseInt($('#radius').val()),
+		    //columns = parseInt($('#columns').val()),
+		    //rows = parseInt($('#rows').val()),
+				radius = 20,
+				columns = 10,
+				rows = 10;
+				console.log(radius + " " + columns + " " + rows);
+
+		  $('#container').empty().hexGridWidget(radius, columns, rows)
+		};
+		rebuild();
+</script>
 </body>
 
 </html>
